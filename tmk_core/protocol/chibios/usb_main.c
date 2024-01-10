@@ -362,6 +362,7 @@ void init_usb_driver(USBDriver *usbp) {
     usbConnectBus(usbp);
 }
 
+<<<<<<< HEAD
 __attribute__((weak)) void restart_usb_driver(USBDriver *usbp) {
     usbDisconnectBus(usbp);
     usbStop(usbp);
@@ -386,6 +387,9 @@ __attribute__((weak)) void restart_usb_driver(USBDriver *usbp) {
         usb_endpoint_out_start(&usb_endpoints_out[i]);
     }
 
+=======
+__attribute__((weak)) void usb_start(USBDriver *usbp) {
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
     usbStart(usbp, &usbcfg);
     usbConnectBus(usbp);
 }

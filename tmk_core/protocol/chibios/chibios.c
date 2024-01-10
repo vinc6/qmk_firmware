@@ -185,6 +185,7 @@ void protocol_pre_task(void) {
             /* Remote wakeup */
             if (suspend_wakeup_condition() && (USB_DRIVER.status & USB_GETSTATUS_REMOTE_WAKEUP_ENABLED)) {
                 usbWakeupHost(&USB_DRIVER);
+<<<<<<< HEAD
 #    if USB_SUSPEND_WAKEUP_DELAY > 0
                 // Some hubs, kvm switches, and monitors do
                 // weird things, with USB device state bouncing
@@ -194,6 +195,8 @@ void protocol_pre_task(void) {
                 // Pause for a while to let things settle...
                 wait_ms(USB_SUSPEND_WAKEUP_DELAY);
 #    endif
+=======
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
             }
         }
         /* Woken up */

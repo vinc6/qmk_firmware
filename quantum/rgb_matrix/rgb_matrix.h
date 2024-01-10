@@ -25,6 +25,33 @@
 #include "color.h"
 #include "keyboard.h"
 
+<<<<<<< HEAD
+=======
+#if defined(RGB_MATRIX_IS31FL3218)
+#    include "is31fl3218.h"
+#elif defined(RGB_MATRIX_IS31FL3731)
+#    include "is31fl3731.h"
+#elif defined(RGB_MATRIX_IS31FL3733)
+#    include "is31fl3733.h"
+#elif defined(RGB_MATRIX_IS31FL3736)
+#    include "is31fl3736.h"
+#elif defined(RGB_MATRIX_IS31FL3737)
+#    include "is31fl3737.h"
+#elif defined(RGB_MATRIX_IS31FL3741)
+#    include "is31fl3741.h"
+#elif defined(IS31FLCOMMON)
+#    include "is31flcommon.h"
+#elif defined(RGB_MATRIX_SNLED27351)
+#    include "snled27351.h"
+#elif defined(RGB_MATRIX_SNLED27351_SPI)
+#    include "snled27351-spi.h"
+#elif defined(RGB_MATRIX_AW20216S)
+#    include "aw20216s.h"
+#elif defined(RGB_MATRIX_WS2812)
+#    include "ws2812.h"
+#endif
+
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
 #ifndef RGB_MATRIX_TIMEOUT
 #    define RGB_MATRIX_TIMEOUT 0
 #endif
@@ -114,6 +141,8 @@ struct rgb_matrix_limits_t rgb_matrix_get_limits(uint8_t iter);
 #define RGB_MATRIX_TEST_LED_FLAGS() \
     if (!HAS_ANY_FLAGS(g_led_config.flags[i], params->flags)) continue
 
+#define RGB_MATRIX_TIMEOUT_INFINITE (UINT32_MAX)
+
 enum rgb_matrix_effects {
     RGB_MATRIX_NONE = 0,
 
@@ -153,6 +182,9 @@ void rgb_matrix_set_color_all(uint8_t red, uint8_t green, uint8_t blue);
 void rgb_matrix_handle_key_event(uint8_t row, uint8_t col, bool pressed);
 
 void rgb_matrix_task(void);
+
+void rgb_matrix_none_indicators_kb(void);
+void rgb_matrix_none_indicators_user(void);
 
 // This runs after another backlight effect and replaces
 // colors already set
@@ -212,7 +244,23 @@ void        rgb_matrix_decrease_speed_noeeprom(void);
 led_flags_t rgb_matrix_get_flags(void);
 void        rgb_matrix_set_flags(led_flags_t flags);
 void        rgb_matrix_set_flags_noeeprom(led_flags_t flags);
+<<<<<<< HEAD
 void        rgb_matrix_update_pwm_buffers(void);
+=======
+#ifdef RGB_MATRIX_TIMEOUT
+#    if RGB_MATRIX_TIMEOUT > 0
+void rgb_matrix_disable_timeout_set(uint32_t timeout);
+void rgb_matrix_disable_time_reset(void);
+bool rgb_matrix_timeouted(void);
+#    endif
+#endif
+#ifdef RGB_MATRIX_DRIVER_SHUTDOWN_ENABLE
+void rgb_matrix_driver_shutdown(void);
+void rgb_matrix_driver_exit_shutdown(void);
+bool rgb_matrix_is_driver_shutdown(void);
+bool rgb_matrix_driver_allow_shutdown(void);
+#endif
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
 
 #ifndef RGBLIGHT_ENABLE
 #    define eeconfig_update_rgblight_current eeconfig_update_rgb_matrix
@@ -258,6 +306,26 @@ void        rgb_matrix_update_pwm_buffers(void);
 #    define rgblight_decrease_speed_noeeprom rgb_matrix_decrease_speed_noeeprom
 #endif
 
+<<<<<<< HEAD
+=======
+typedef struct {
+    /* Perform any initialisation required for the other driver functions to work. */
+    void (*init)(void);
+    /* Set the colour of a single LED in the buffer. */
+    void (*set_color)(int index, uint8_t r, uint8_t g, uint8_t b);
+    /* Set the colour of all LEDS on the keyboard in the buffer. */
+    void (*set_color_all)(uint8_t r, uint8_t g, uint8_t b);
+    /* Flush any buffered changes to the hardware. */
+    void (*flush)(void);
+#ifdef RGB_MATRIX_DRIVER_SHUTDOWN_ENABLE
+    /* Shutdown the driver. */
+    void (*shutdown)(void);
+    /* Exit from shutdown state. */
+    void (*exit_shutdown)(void);
+#endif
+} rgb_matrix_driver_t;
+
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
 static inline bool rgb_matrix_check_finished_leds(uint8_t led_idx) {
 #if defined(RGB_MATRIX_SPLIT)
     if (is_keyboard_left()) {

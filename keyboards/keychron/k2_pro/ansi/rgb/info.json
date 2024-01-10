@@ -1,0 +1,76 @@
+{
+<<<<<<< HEAD:keyboards/keychron/q1v1/info.json
+    "keyboard_name": "Keychron Q1v1",
+    "manufacturer": "Keychron",
+    "maintainer": "lalalademaxiya1",
+    "bootloader": "atmel-dfu",
+    "diode_direction": "ROW2COL",
+    "build": {
+        "lto": true
+    },
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "dip_switch": true,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true,
+        "rgb_matrix": true
+    },
+    "dip_switch": {
+        "matrix_grid": [ [0, 1] ]
+    },
+    "matrix_pins": {
+        "cols": ["D5", "D4", "D6", "D7", "B4", "B5", "B6", "C6", "C7", "F7", "F6", "F5", "F4", "F1", "F0"],
+        "rows": ["D3", "D2", "B3", "B2", "B1", "B0"]
+    },
+    "processor": "atmega32u4",
+=======
+    "usb": {
+    	"pid": "0x0220",
+    	"device_version": "1.0.0"
+    },
+    "features": {
+        "rgb_matrix": true
+    },
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/k2_pro/ansi/rgb/info.json
+    "rgb_matrix": {
+        "driver": "snled27351",
+        "animations": {
+            "breathing": true,
+            "band_spiral_val": true,
+            "cycle_all": true,
+            "cycle_left_right": true,
+            "cycle_up_down": true,
+            "rainbow_moving_chevron": true,
+            "cycle_out_in": true,
+            "cycle_out_in_dual": true,
+            "cycle_pinwheel": true,
+            "cycle_spiral": true,
+            "dual_beacon": true,
+            "rainbow_beacon": true,
+            "jellybean_raindrops": true,
+            "pixel_rain": true,
+            "typing_heatmap": true,
+            "digital_rain": true,
+            "solid_reactive_simple": true,
+            "solid_reactive_multiwide": true,
+            "solid_reactive_multinexus": true,
+            "splash": true,
+<<<<<<< HEAD:keyboards/keychron/q1v1/info.json
+            "typing_heatmap": true
+        },
+        "driver": "is31fl3733",
+        "sleep": true
+    },
+    "url": "https://github.com/Keychron",
+    "usb": {
+        "force_nkro": true,
+        "vid": "0x3434"
+=======
+            "solid_splash": true
+        }
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/k2_pro/ansi/rgb/info.json
+    }
+}
