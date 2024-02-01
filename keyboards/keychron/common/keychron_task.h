@@ -13,12 +13,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 #pragma once
 
 #include "stdint.h"
 #include "action.h"
 
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/q3/ansi/config.h
 #define SNLED27351_CURRENT_TUNE \
     { 0x9D, 0x9D, 0x44, 0x9D, 0x9D, 0x44, 0x9D, 0x9D, 0x44, 0x9D, 0x9D, 0x44 }
@@ -40,10 +41,14 @@ void register_led_indicator_task(keychron_cb cb, bool priority);
 #endif
 
 #else
+=======
+>>>>>>> f9f4cf410f (Remove *_CALLBACK_ENABLE related code; Fix V2 Max device name)
 bool keychron_task_kb(void);
 bool process_record_keychron_kb(uint16_t keycode, keyrecord_t *record);
 
-#endif
 void keychron_task(void);
+<<<<<<< HEAD
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/common/keychron_task.h
 
+=======
+>>>>>>> f9f4cf410f (Remove *_CALLBACK_ENABLE related code; Fix V2 Max device name)
