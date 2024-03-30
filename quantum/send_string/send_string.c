@@ -26,6 +26,9 @@
 #ifdef LK_WIRELESS_ENABLE
 #include "wireless.h"
 #endif
+#if defined(KC_BLUETOOTH_ENABLE)
+#include "bluetooth.h"
+#endif
 
 
 #if defined(AUDIO_ENABLE) && defined(SENDSTRING_BELL)
@@ -188,7 +191,7 @@ void send_string_with_delay(const char *string, uint8_t interval) {
                 wait_ms(ms);
 =======
                 while (ms--) {
-#ifdef LK_WIRELESS_ENABLE
+#if defined(LK_WIRELESS_ENABLE) || defined(KC_BLUETOOTH_ENABLE)
                     send_string_task();
 #endif
                     wait_ms(1);
@@ -208,13 +211,13 @@ void send_string_with_delay(const char *string, uint8_t interval) {
         {
             uint8_t ms = interval;
             while (ms--) {
-#ifdef LK_WIRELESS_ENABLE
+#if defined(LK_WIRELESS_ENABLE) || defined(KC_BLUETOOTH_ENABLE)
                 send_string_task();
 #endif
                 wait_ms(1);
             }
         }
-#ifdef LK_WIRELESS_ENABLE
+#if defined(LK_WIRELESS_ENABLE) || defined(KC_BLUETOOTH_ENABLE)
         send_string_task();
 #endif
 >>>>>>> 0cd4ee07c3 (fix delay of macro doens't work properly except cable mode)
