@@ -32,7 +32,14 @@ uint8_t has_anykey(void) {
     uint8_t* p   = keyboard_report->keys;
     uint8_t  lp  = sizeof(keyboard_report->keys);
 #ifdef NKRO_ENABLE
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
+=======
+#    ifdef APDAPTIVE_NKRO_ENABLE
+    return kb_keys_count + nkro_bit_count;
+#    endif
+    if (keyboard_protocol && keymap_config.nkro) {
+>>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
         p  = nkro_report->bits;
         lp = sizeof(nkro_report->bits);
     }
@@ -49,12 +56,20 @@ uint8_t has_anykey(void) {
  */
 uint8_t get_first_key(void) {
 #ifdef NKRO_ENABLE
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
+=======
+#    ifdef APDAPTIVE_NKRO_ENABLE
+    return keyboard_report->keys[0];
+#    else
+    if (keyboard_protocol && keymap_config.nkro) {
+>>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
         uint8_t i = 0;
         for (; i < NKRO_REPORT_BITS && !nkro_report->bits[i]; i++)
             ;
         return i << 3 | biton(nkro_report->bits[i]);
     }
+#    endif
 #endif
     return keyboard_report->keys[0];
 }
@@ -69,13 +84,23 @@ bool is_key_pressed(uint8_t key) {
         return false;
     }
 #ifdef NKRO_ENABLE
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
+=======
+#    ifdef APDAPTIVE_NKRO_ENABLE
+    if (keyboard_protocol && nkro_bit_count) {
+        if ((key >> 3) < NKRO_REPORT_BITS && (nkro_report->bits[key >> 3] & 1 << (key & 7))) return true;
+    }
+#    else
+    if (keyboard_protocol && keymap_config.nkro) {
+>>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
         if ((key >> 3) < NKRO_REPORT_BITS) {
             return nkro_report->bits[key >> 3] & 1 << (key & 7);
         } else {
             return false;
         }
     }
+#endif
 #endif
     for (int i = 0; i < KEYBOARD_REPORT_KEYS; i++) {
         if (keyboard_report->keys[i] == key) {
@@ -103,6 +128,10 @@ void add_key_byte(report_keyboard_t* keyboard_report, uint8_t code) {
     if (i == KEYBOARD_REPORT_KEYS) {
         if (empty != -1) {
             keyboard_report->keys[empty] = code;
+#    ifdef APDAPTIVE_NKRO_ENABLE
+            kb_report_changed |= KB_RPT_STD;
+            ++kb_keys_count;
+#    endif
         }
     }
 }
@@ -115,6 +144,10 @@ void del_key_byte(report_keyboard_t* keyboard_report, uint8_t code) {
     for (uint8_t i = 0; i < KEYBOARD_REPORT_KEYS; i++) {
         if (keyboard_report->keys[i] == code) {
             keyboard_report->keys[i] = 0;
+#    ifdef APDAPTIVE_NKRO_ENABLE
+            kb_report_changed |= KB_RPT_STD;
+            --kb_keys_count;
+#    endif
         }
     }
 }
@@ -127,6 +160,10 @@ void del_key_byte(report_keyboard_t* keyboard_report, uint8_t code) {
 void add_key_bit(report_nkro_t* nkro_report, uint8_t code) {
     if ((code >> 3) < NKRO_REPORT_BITS) {
         nkro_report->bits[code >> 3] |= 1 << (code & 7);
+#    ifdef APDAPTIVE_NKRO_ENABLE
+        kb_report_changed |= KB_RPT_NKRO;
+        ++nkro_bit_count;
+#    endif
     } else {
         dprintf("add_key_bit: can't add: %02X\n", code);
     }
@@ -136,12 +173,24 @@ void add_key_bit(report_nkro_t* nkro_report, uint8_t code) {
  *
  * FIXME: Needs doc
  */
-void del_key_bit(report_nkro_t* nkro_report, uint8_t code) {
+bool del_key_bit(report_nkro_t* nkro_report, uint8_t code) {
     if ((code >> 3) < NKRO_REPORT_BITS) {
+#    ifdef APDAPTIVE_NKRO_ENABLE
+        if (nkro_report->bits[code >> 3] & (1 << (code & 7))) {
+            nkro_report->bits[code >> 3] &= ~(1 << (code & 7));
+            kb_report_changed |= KB_RPT_NKRO;
+            --nkro_bit_count;
+            return true;
+        }
+#    else
         nkro_report->bits[code >> 3] &= ~(1 << (code & 7));
+        return true;
+#    endif
     } else {
         dprintf("del_key_bit: can't del: %02X\n", code);
     }
+
+    return false;
 }
 #endif
 
@@ -151,7 +200,15 @@ void del_key_bit(report_nkro_t* nkro_report, uint8_t code) {
  */
 void add_key_to_report(uint8_t key) {
 #ifdef NKRO_ENABLE
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
+=======
+#    ifdef APDAPTIVE_NKRO_ENABLE
+    if (keyboard_protocol && kb_keys_count == KEYBOARD_REPORT_KEYS) {
+#    else
+    if (keyboard_protocol && keymap_config.nkro) {
+#    endif
+>>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
         add_key_bit(nkro_report, key);
         return;
     }
@@ -165,10 +222,18 @@ void add_key_to_report(uint8_t key) {
  */
 void del_key_from_report(uint8_t key) {
 #ifdef NKRO_ENABLE
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
+=======
+#    ifdef APDAPTIVE_NKRO_ENABLE
+    if (keyboard_protocol && nkro_bit_count && del_key_bit(nkro_report, key)) return;
+#    else
+    if (keyboard_protocol && keymap_config.nkro) {
+>>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
         del_key_bit(nkro_report, key);
         return;
     }
+#    endif
 #endif
     del_key_byte(keyboard_report, key);
 }
@@ -180,10 +245,29 @@ void del_key_from_report(uint8_t key) {
 void clear_keys_from_report(void) {
     // not clear mods
 #ifdef NKRO_ENABLE
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
+=======
+#    ifdef APDAPTIVE_NKRO_ENABLE
+    memset(nkro_report->bits, 0, sizeof(nkro_report->bits));
+    if (nkro_bit_count) {
+        kb_report_changed |= KB_RPT_NKRO;
+        nkro_bit_count = 0;
+    }
+
+    memset(keyboard_report->keys, 0, sizeof(keyboard_report->keys));
+    if (kb_keys_count) {
+        kb_report_changed |= KB_RPT_STD;
+        kb_keys_count = 0;
+    }
+    return;
+#    else
+    if (keyboard_protocol && keymap_config.nkro) {
+>>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
         memset(nkro_report->bits, 0, sizeof(nkro_report->bits));
         return;
     }
+#    endif
 #endif
     memset(keyboard_report->keys, 0, sizeof(keyboard_report->keys));
 }
