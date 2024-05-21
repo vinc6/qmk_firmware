@@ -186,6 +186,9 @@ void protocol_pre_task(void) {
             if (suspend_wakeup_condition() && (USB_DRIVER.status & USB_GETSTATUS_REMOTE_WAKEUP_ENABLED)) {
                 usbWakeupHost(&USB_DRIVER);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b6d42d84d2 (Pick upstream PR #21656)
 #    if USB_SUSPEND_WAKEUP_DELAY > 0
                 // Some hubs, kvm switches, and monitors do
                 // weird things, with USB device state bouncing
@@ -195,8 +198,11 @@ void protocol_pre_task(void) {
                 // Pause for a while to let things settle...
                 wait_ms(USB_SUSPEND_WAKEUP_DELAY);
 #    endif
+<<<<<<< HEAD
 =======
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
+=======
+>>>>>>> b6d42d84d2 (Pick upstream PR #21656)
             }
         }
         /* Woken up */
@@ -208,5 +214,11 @@ void protocol_post_task(void) {
 #ifdef VIRTSER_ENABLE
     virtser_task();
 #endif
+<<<<<<< HEAD
+=======
+#ifdef RAW_ENABLE
+    raw_hid_task();
+#endif
+>>>>>>> b6d42d84d2 (Pick upstream PR #21656)
     usb_idle_task();
 }

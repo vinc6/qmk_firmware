@@ -29,7 +29,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format off
 
 /* HID report IDs */
+<<<<<<< HEAD
 enum hid_report_ids { 
+=======
+enum hid_report_ids {
+>>>>>>> b6d42d84d2 (Pick upstream PR #21656)
     REPORT_ID_ALL = 0,
     REPORT_ID_KEYBOARD = 1,
     REPORT_ID_MOUSE,
@@ -43,8 +47,13 @@ enum hid_report_ids {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define IS_VALID_REPORT_ID(id) ((id) >= REPORT_ID_ALL && (id) <= REPORT_ID_COUNT)
 =======
+=======
+#define IS_VALID_REPORT_ID(id) ((id) >= REPORT_ID_ALL && (id) <= REPORT_ID_COUNT)
+
+>>>>>>> b6d42d84d2 (Pick upstream PR #21656)
 #ifdef APDAPTIVE_NKRO_ENABLE
 /* Keyboard report type */
 #define KB_RPT_MASK(n) (1 << (n))
