@@ -31,6 +31,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keycode_config.h"
 #include "debug.h"
 #include "quantum.h"
+#ifdef LK_WIRELESS_ENABLE
+#include "wireless.h"
+#endif
+#if defined(KC_BLUETOOTH_ENABLE)
+#include "bluetooth.h"
+#endif
 
 #ifdef BACKLIGHT_ENABLE
 #    include "backlight.h"
@@ -1009,7 +1015,16 @@ __attribute__((weak)) void unregister_code(uint8_t code) {
  */
 __attribute__((weak)) void tap_code_delay(uint8_t code, uint16_t delay) {
     register_code(code);
+<<<<<<< HEAD
     wait_ms(delay);
+=======
+    for (uint16_t i = delay; i > 0; i--) {
+#if defined(LK_WIRELESS_ENABLE) || defined(KC_BLUETOOTH_ENABLE)
+        send_string_task();
+#endif
+        wait_ms(1);
+    }
+>>>>>>> a576a0b47b (Added q1_he)
     unregister_code(code);
 }
 

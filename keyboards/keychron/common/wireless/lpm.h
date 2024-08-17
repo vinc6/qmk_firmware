@@ -15,13 +15,23 @@
  */
 
 #pragma once
+#include "config.h"
 
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/bastardkb/charybdis/3x5/config.h
 /* Trackball angle adjustment. */
 #define ROTATIONAL_TRANSFORM_ANGLE -25
 =======
 #ifndef RUN_MODE_PROCESS_TIME
 #    define RUN_MODE_PROCESS_TIME 1000
+=======
+#ifndef DEFAULT_PROCESS_TIME
+#    define DEFAULT_PROCESS_TIME 3000
+#endif
+
+#ifndef CONNECTED_PROCESS_TIME
+#    define CONNECTED_PROCESS_TIME  (30*60*1000)
+>>>>>>> a576a0b47b (Added q1_he)
 #endif
 
 typedef enum {
@@ -36,6 +46,7 @@ void lpm_timer_reset(void);
 void lpm_timer_stop(void);
 bool usb_power_connected(void);
 bool lpm_is_kb_idle(void);
+void matrix_lpm(void);
 void enter_power_mode(pm_t mode);
 void lpm_task(void);
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/common/wireless/lpm.h
