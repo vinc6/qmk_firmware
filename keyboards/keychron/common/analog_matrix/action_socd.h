@@ -14,30 +14,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-uint32_t sqrt_uint32(uint32_t n) {
-    uint32_t x = n;
-    uint32_t y = (x + 1) / 2;
-
-    while (y < x) {
-        x = y;
-        y = (x + n / x) / 2;
-    }
-
-<<<<<<< HEAD:keyboards/keychron/k2_pro/halconf.h
-#define HAL_USE_I2C TRUE
-
-<<<<<<< HEAD:keyboards/mechlovin/olly/octagon/halconf.h
-#define HAL_USE_SPI TRUE
-=======
-#ifdef KC_BLUETOOTH_ENABLE
-#    define PAL_USE_CALLBACKS TRUE
-#    define HAL_USE_SERIAL TRUE
-#    define HAL_USE_RTC TRUE
-#endif
->>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/k2_pro/halconf.h
-
-#include_next <halconf.h>
-=======
-    return x;
-}
->>>>>>> a576a0b47b (Added q1_he):keyboards/keychron/common/analog_matrix/sqrt.c
+// SOCD Prioritization
+enum {
+    SOCD_PRI_NONE = 0,
+    SOCD_PRI_DEEPER_TRAVEL,
+    SOCD_PRI_DEEPER_TRAVEL_SINGLE,
+    SOCD_PRI_LAST_KEYSTROKE,
+    SOCD_PRI_KEY_1,
+    SOCD_PRI_KEY_2,
+    SOCD_PRI_NEUTRAL,
+    SOCD_PRI_MAX,
+};
