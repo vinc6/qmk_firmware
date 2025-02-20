@@ -249,9 +249,33 @@ void snled27351_flush(void) {
     }
 }
 
+<<<<<<< HEAD
 void snled27351_sw_return_normal(uint8_t index) {
     snled27351_select_page(index, SNLED27351_COMMAND_FUNCTION);
 
+=======
+void snled27351_shutdown(void) {
+#    if defined(LED_DRIVER_SHUTDOWN_PIN)
+    writePinLow(LED_DRIVER_SHUTDOWN_PIN);
+#    else
+    for (uint8_t i = 0; i < SNLED27351_DRIVER_COUNT; i++)
+        snled27351_sw_shutdown(i);
+#    endif
+}
+
+void snled27351_exit_shutdown(void) {
+#    if defined(LED_DRIVER_SHUTDOWN_PIN)
+    writePinHigh(LED_DRIVER_SHUTDOWN_PIN);
+#    else
+    for (uint8_t i = 0; i < SNLED27351_DRIVER_COUNT; i++)
+        snled27351_sw_return_normal(i);
+#    endif
+}
+
+void snled27351_sw_return_normal(uint8_t addr) {
+    // Select to function page
+    snled27351_write_register(addr, SNLED27351_REG_COMMAND, SNLED27351_COMMAND_FUNCTION);
+>>>>>>> cca8df6939 (Added shutdown fucntion to snled driver)
     // Setting LED driver to normal mode
     snled27351_write_register(index, SNLED27351_FUNCTION_REG_SOFTWARE_SHUTDOWN, SNLED27351_SOFTWARE_SHUTDOWN_SSD_NORMAL);
 }

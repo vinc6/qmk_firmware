@@ -185,9 +185,16 @@ void snled27351_update_pwm_buffers(uint8_t index);
 void snled27351_update_led_control_registers(uint8_t index);
 
 void snled27351_flush(void);
+<<<<<<< HEAD
 
 void snled27351_sw_return_normal(uint8_t index);
 void snled27351_sw_shutdown(uint8_t index);
+=======
+void snled27351_shutdown(void);
+void snled27351_exit_shutdown(void);
+void snled27351_sw_return_normal(uint8_t addr);
+void snled27351_sw_shutdown(uint8_t addr);
+>>>>>>> cca8df6939 (Added shutdown fucntion to snled driver)
 
 #define CB1_CA1 0x00
 #define CB1_CA2 0x01
