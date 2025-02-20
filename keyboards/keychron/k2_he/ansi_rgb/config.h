@@ -55,6 +55,7 @@
 #    define RGB_MATRIX_KEYPRESSES
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 
+<<<<<<< HEAD
 /* Caps Word configuration */
 #   define CAPS_WORD_INVERT_ON_SHIFT
 #   define CAPS_WORD_IDLE_TIMEOUT 10000
@@ -69,4 +70,6 @@
 /* Tapping Term configuration */
 #   define TAPPING_TERM 200
 
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #endif

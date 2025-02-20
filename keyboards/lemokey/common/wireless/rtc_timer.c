@@ -14,11 +14,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/work_louder/nano/nano.c
 #include "quantum.h"
 =======
 #include "hal.h"
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/lemokey/common/wireless/rtc_timer.c
+=======
+#include "hal.h"
+>>>>>>> refs/remotes/origin/hall_effect_playground
 
 #if (HAL_USE_RTC)
 

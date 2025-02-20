@@ -19,13 +19,33 @@
 #    include "via.h"
 #endif
 #include "quantum_keycodes.h"
+<<<<<<< HEAD
+<<<<<<<< HEAD:keyboards/keychron/common/wireless/keychron_wireless_common.h
 
 <<<<<<< HEAD:keyboards/keychron/q1v2/ansi/config.h
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 45
 =======
+=======
+
+<<<<<<<< HEAD:keyboards/keychron/q1v2/jis/config.h
+/* Enable caps-lock LED */
+#define CAPS_LOCK_LED_INDEX 45
+========
+>>>>>>> refs/remotes/origin/hall_effect_playground
 void lkbt51_param_init(void);
 
 bool process_record_keychron_wireless(uint16_t keycode, keyrecord_t *record);
 void keychron_wireless_common_task(void);
+<<<<<<< HEAD
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/common/wireless/keychron_wireless_common.h
+========
+
+void lkbt51_param_init(void);
+
+bool process_record_lemokey_wireless(uint16_t keycode, keyrecord_t *record);
+void lemokey_wireless_common_task(void);
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/lemokey/common/wireless/lemokey_wireless_common.h
+=======
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/wireless/keychron_wireless_common.h
+>>>>>>> refs/remotes/origin/hall_effect_playground

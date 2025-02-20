@@ -1235,6 +1235,7 @@ PROGMEM uint8_t extendedPropertiesDescriptor[0x92] =
 };
 #endif
 
+<<<<<<< HEAD
 >>>>>>> a576a0b47b (Added q1_he)
 // clang-format on
 __attribute__((weak))  void get_usb_descriptor_kb(const uint16_t wValue, const uint16_t wIndex, const uint16_t wLength, const void** const DescriptorAddress, uint16_t *size){}
@@ -1283,6 +1284,10 @@ void set_serial_number_descriptor(void) {
 #    endif // defined(SERIAL_NUMBER_USE_HARDWARE_ID) && SERIAL_NUMBER_USE_HARDWARE_ID == TRUE
 
 #endif // defined(SERIAL_NUMBER)
+=======
+// clang-format on
+__attribute__((weak))  void get_usb_descriptor_kb(const uint16_t wValue, const uint16_t wIndex, const uint16_t wLength, const void** const DescriptorAddress, uint16_t *size){}
+>>>>>>> refs/remotes/origin/hall_effect_playground
 
 /**
  * This function is called by the library when in device mode, and must be overridden (see library "USB Descriptors"
@@ -1347,7 +1352,17 @@ uint16_t get_usb_descriptor(const uint16_t wValue, const uint16_t wIndex, const 
 
                     break;
 #endif
+<<<<<<< HEAD
 >>>>>>> a576a0b47b (Added q1_he)
+=======
+#if defined(XINPUT_ENABLE)
+                case 0xEE:
+                    Address = &MsOsString;
+                    Size    = pgm_read_byte(&MsOsString.Header.Size);
+
+                    break;
+#endif
+>>>>>>> refs/remotes/origin/hall_effect_playground
             }
 #ifdef OS_DETECTION_ENABLE
             process_wlength(wLength);

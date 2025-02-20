@@ -16,6 +16,7 @@
 
 #pragma once
 
+<<<<<<<< HEAD:keyboards/keychron/common/wireless/wireless_config.h
 #include "config.h"
 
 //
@@ -34,3 +35,20 @@
 #ifndef CONNECTED_BACKLIGHT_OFF_DELAY_TIME
 #    define CONNECTED_BACKLIGHT_OFF_DELAY_TIME 600
 #endif
+========
+#ifndef STOP_MODE_MAIN_REGULATOR_LOW_VOLTAGE
+#    define STOP_MODE_MAIN_REGULATOR_LOW_VOLTAGE TRUE
+#endif
+
+#ifndef STOP_MODE_LOW_POWER_REGULATOR_LOW_VOLTAG
+#    define STOP_MODE_LOW_POWER_REGULATOR_LOW_VOLTAG TRUE
+#endif
+
+#ifndef STOP_MODE_FLASH_POWER_DOWN
+#    define STOP_MODE_FLASH_POWER_DOWN TRUE
+#endif
+
+#ifndef STOP_MODE_LOW_POWER_DEEPSLEEP
+#    define STOP_MODE_LOW_POWER_DEEPSLEEP TRUE
+#endif
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/wireless/lpm_stm32f401.h

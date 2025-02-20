@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 /* Copyright 2024 @ Keychron (https://www.keychron.com)
+=======
+<<<<<<<< HEAD:keyboards/deemen17/de80/config.h
+/* Copyright 2024 Deemen17 <https://github.com/Deemen17>
+========
+/* Copyright 2024 @ Keychron (https://www.keychron.com)
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/analog_matrix/sqrt.h
+>>>>>>> refs/remotes/origin/hall_effect_playground
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,6 +24,7 @@
 
 #pragma once
 
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/k2_pro/ansi/white/keymaps/candysign/config.h
 <<<<<<< HEAD:keyboards/keychron/q4/ansi/config.h
 /* Enable CapsLock LED*/
@@ -29,3 +38,13 @@
 
 uint32_t sqrt_uint32(uint32_t n);
 >>>>>>> a576a0b47b (Added q1_he):keyboards/keychron/common/analog_matrix/sqrt.h
+=======
+<<<<<<<< HEAD:keyboards/deemen17/de80/config.h
+#define WS2812_SPI_DRIVER SPID2
+#define WS2812_SPI_USE_CIRCULAR_BUFFER
+========
+#include "stdint.h"
+
+uint32_t sqrt_uint32(uint32_t n);
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/analog_matrix/sqrt.h
+>>>>>>> refs/remotes/origin/hall_effect_playground

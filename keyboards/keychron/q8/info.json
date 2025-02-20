@@ -1,4 +1,5 @@
 {
+<<<<<<<< HEAD:keyboards/keychron/q8/info.json
     "manufacturer": "Keychron",
     "keyboard_name": "Keychron Q8",
     "maintainer": "lalalademaxiya1",
@@ -14,23 +15,50 @@
         "wear_levling": {
             "backing_size": 4096
         }  
+========
+    "keyboard_name": "Keychron Q1 HE",
+    "manufacturer": "Keychron",
+    "url": "https://github.com/Keychron",
+    "maintainer": "lokher",
+    "processor": "STM32F401",
+    "bootloader": "stm32-dfu",
+    "usb": {
+        "vid": "0x3434"
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/q1_he/info.json
     },
     "features": {
         "bootmagic": true,
-        "command": false,
-        "console": false,
-        "dip_switch": true,
-        "extrakey": true,
-        "mousekey": true,
-        "nkro": true,
-        "rgb_matrix": true
+        "extrakey" : true,
+        "mousekey" : true,
+        "dip_switch" : true,
+        "encoder": true,
+        "encoder_map": true,
+        "nkro" : true,
+        "rgb_matrix": true,
+        "raw" : true,
+        "send_string" : true
     },
     "matrix_pins": {
-        "cols": ["C14", "C15", "A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "B0", "B1", "A8", "A9", "H3"],
-        "rows": ["B4", "B3", "A15", "A14", "A13"]
+        "cols": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        "rows": ["C0", "C1", "C2", "C3", "A0", "A1"],
+        "custom": true,
+        "custom_lite": true
     },
-    "processor": "STM32L432",
+    "diode_direction": "ROW2COL",
+    "encoder": {
+        "rotary": [
+            {
+                "pin_a": "B14",
+                "pin_b": "B15"
+            }
+        ]
+    },
+    "dip_switch" :{
+        "pins": ["B12"]
+    },
     "rgb_matrix": {
+        "driver": "snled27351_spi",
+        "sleep": true,
         "animations": {
             "band_spiral_val": true,
             "breathing": true,
@@ -53,12 +81,23 @@
             "solid_splash": true,
             "splash": true,
             "typing_heatmap": true
+<<<<<<<< HEAD:keyboards/keychron/q8/info.json
         },
         "driver": "snled27351",
         "sleep": true
+========
+        }
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/q1_he/info.json
     },
-    "url": "https://github.com/Keychron",
-    "usb": {
-        "vid": "0x3434"
-    }
+    "eeprom": {
+        "wear_leveling": {
+            "driver": "embedded_flash",
+            "logical_size": 6144,
+            "backing_size": 12288
+        }
+    },
+    "build": {
+        "debounce_type": "sym_eager_pk"
+    },
+    "debounce": 0
 }

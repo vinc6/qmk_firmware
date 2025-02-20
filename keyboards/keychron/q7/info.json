@@ -1,5 +1,7 @@
 {
+    "keyboard_name": "Keychron K2 HE",
     "manufacturer": "Keychron",
+<<<<<<<< HEAD:keyboards/keychron/q7/info.json
     "keyboard_name": "Keychron Q7",
     "maintainer": "lalalademaxiya1",
     "bootloader": "stm32-dfu",
@@ -28,9 +30,38 @@
     "matrix_pins": {
         "cols": ["C14", "C15", "A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "B0", "B1", "A8", "A9", "A10", "B5"],
         "rows": ["B4", "B3", "A15", "A14", "A13"]
+========
+    "url": "https://github.com/Keychron",
+    "maintainer": "lokher",
+    "processor": "STM32F401",
+    "bootloader": "stm32-dfu",
+    "usb": {
+        "vid": "0x3434"
     },
-    "processor": "STM32L432",
+    "features": {
+        "bootmagic": true,
+        "extrakey" : true,
+        "mousekey" : true,
+        "dip_switch" : true,
+        "nkro" : true,
+        "rgb_matrix": true,
+        "raw": true,
+        "send_string": true
+    },
+    "matrix_pins": {
+        "cols": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        "rows": ["C0", "C1", "C2", "C3", "A0", "A1"],
+        "custom": true,
+        "custom_lite": true
+    },
+    "diode_direction": "ROW2COL",
+    "dip_switch" :{
+        "pins": ["B14"]
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/k2_he/info.json
+    },
     "rgb_matrix": {
+        "driver": "snled27351_spi",
+        "sleep": true,
         "animations": {
             "band_spiral_val": true,
             "breathing": true,
@@ -53,12 +84,23 @@
             "solid_splash": true,
             "splash": true,
             "typing_heatmap": true
+<<<<<<<< HEAD:keyboards/keychron/q7/info.json
         },
         "driver": "snled27351",
         "sleep": true
+========
+        }
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/k2_he/info.json
     },
-    "url": "https://github.com/Keychron",
-    "usb": {
-        "vid": "0x3434"
-    }
+    "eeprom": {
+        "wear_leveling": {
+            "driver": "embedded_flash",
+            "logical_size": 6144,
+            "backing_size": 12288
+        }
+    },
+    "build": {
+        "debounce_type": "sym_eager_pk"
+    },
+    "debounce": 0
 }

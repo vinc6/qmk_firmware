@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 <<<<<<<< HEAD:keyboards/kwstudio/scorpio_rev2/config.h
 /* Copyright 2024 kwstudio
 ========
 /* Copyright 2022 @ lokher (https://www.keychron.com)
 >>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/common/wireless/bat_level_animation.h
+=======
+/* Copyright 2022 @ lokher (https://www.keychron.com)
+>>>>>>> refs/remotes/origin/hall_effect_playground
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,15 +24,31 @@
 
 #pragma once
 
+<<<<<<< HEAD
 <<<<<<<< HEAD:keyboards/kwstudio/scorpio_rev2/config.h
 #define WS2812_PWM_DRIVER PWMD1
 #define WS2812_PWM_CHANNEL 3
 #define WS2812_DMA_STREAM STM32_DMA1_STREAM5
 #define WS2812_DMA_CHANNEL 5
 ========
+=======
+<<<<<<<< HEAD:keyboards/keychron/bluetooth/bat_level_animation.h
+<<<<<<< HEAD:keyboards/keychron/q0/config.h
+#define SNLED27351_CURRENT_TUNE { 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70 }
+=======
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/wireless/bat_level_animation.h
+>>>>>>> refs/remotes/origin/hall_effect_playground
 void bat_level_animiation_start(uint8_t percentage);
 void bat_level_animiation_stop(void);
 bool bat_level_animiation_actived(void);
 void bat_level_animiation_indicate(void);
 void bat_level_animiation_task(void);
+<<<<<<< HEAD
 >>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/common/wireless/bat_level_animation.h
+=======
+<<<<<<<< HEAD:keyboards/keychron/bluetooth/bat_level_animation.h
+>>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/bluetooth/bat_level_animation.h
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/wireless/bat_level_animation.h
+>>>>>>> refs/remotes/origin/hall_effect_playground

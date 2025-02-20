@@ -214,7 +214,10 @@ void        led_matrix_set_flags(led_flags_t flags);
 void        led_matrix_set_flags_noeeprom(led_flags_t flags);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #ifdef LED_MATRIX_TIMEOUT
 #    if LED_MATRIX_TIMEOUT > 0
 void led_matrix_disable_timeout_set(uint32_t timeout);

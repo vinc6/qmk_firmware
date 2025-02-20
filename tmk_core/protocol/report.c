@@ -33,8 +33,11 @@ uint8_t has_anykey(void) {
     uint8_t  lp  = sizeof(keyboard_report->keys);
 #ifdef NKRO_ENABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    ifdef APDAPTIVE_NKRO_ENABLE
     return kb_keys_count + nkro_bit_count;
 #    endif
@@ -57,8 +60,11 @@ uint8_t has_anykey(void) {
 uint8_t get_first_key(void) {
 #ifdef NKRO_ENABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    ifdef APDAPTIVE_NKRO_ENABLE
     return keyboard_report->keys[0];
 #    else
@@ -85,8 +91,11 @@ bool is_key_pressed(uint8_t key) {
     }
 #ifdef NKRO_ENABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    ifdef APDAPTIVE_NKRO_ENABLE
     if (keyboard_protocol && nkro_bit_count) {
         if ((key >> 3) < NKRO_REPORT_BITS && (nkro_report->bits[key >> 3] & 1 << (key & 7))) return true;
@@ -201,14 +210,20 @@ bool del_key_bit(report_nkro_t* nkro_report, uint8_t code) {
 void add_key_to_report(uint8_t key) {
 #ifdef NKRO_ENABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    ifdef APDAPTIVE_NKRO_ENABLE
     if (keyboard_protocol && kb_keys_count == KEYBOARD_REPORT_KEYS) {
 #    else
     if (keyboard_protocol && keymap_config.nkro) {
 #    endif
+<<<<<<< HEAD
 >>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
         add_key_bit(nkro_report, key);
         return;
     }
@@ -223,8 +238,11 @@ void add_key_to_report(uint8_t key) {
 void del_key_from_report(uint8_t key) {
 #ifdef NKRO_ENABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    ifdef APDAPTIVE_NKRO_ENABLE
     if (keyboard_protocol && nkro_bit_count && del_key_bit(nkro_report, key)) return;
 #    else
@@ -246,8 +264,11 @@ void clear_keys_from_report(void) {
     // not clear mods
 #ifdef NKRO_ENABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    ifdef APDAPTIVE_NKRO_ENABLE
     memset(nkro_report->bits, 0, sizeof(nkro_report->bits));
     if (nkro_bit_count) {

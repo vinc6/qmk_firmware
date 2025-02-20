@@ -272,6 +272,24 @@ void snled27351_exit_shutdown(void) {
 #    endif
 }
 
+void snled27351_shutdown(void) {
+#    if defined(LED_DRIVER_SHUTDOWN_PIN)
+    writePinLow(LED_DRIVER_SHUTDOWN_PIN);
+#    else
+    for (uint8_t i = 0; i < SNLED27351_DRIVER_COUNT; i++)
+        snled27351_sw_shutdown(i);
+#    endif
+}
+
+void snled27351_exit_shutdown(void) {
+#    if defined(LED_DRIVER_SHUTDOWN_PIN)
+    writePinHigh(LED_DRIVER_SHUTDOWN_PIN);
+#    else
+    for (uint8_t i = 0; i < SNLED27351_DRIVER_COUNT; i++)
+        snled27351_sw_return_normal(i);
+#    endif
+}
+
 void snled27351_sw_return_normal(uint8_t addr) {
     // Select to function page
     snled27351_write_register(addr, SNLED27351_REG_COMMAND, SNLED27351_COMMAND_FUNCTION);

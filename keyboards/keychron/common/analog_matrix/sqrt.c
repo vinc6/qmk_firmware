@@ -23,6 +23,7 @@ uint32_t sqrt_uint32(uint32_t n) {
         y = (x + n / x) / 2;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/k2_pro/halconf.h
 #define HAL_USE_I2C TRUE
 
@@ -41,3 +42,7 @@ uint32_t sqrt_uint32(uint32_t n) {
     return x;
 }
 >>>>>>> a576a0b47b (Added q1_he):keyboards/keychron/common/analog_matrix/sqrt.c
+=======
+    return x;
+}
+>>>>>>> refs/remotes/origin/hall_effect_playground

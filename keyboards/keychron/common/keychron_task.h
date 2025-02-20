@@ -16,6 +16,7 @@
 
 #pragma once
 
+<<<<<<< HEAD
 #include "stdint.h"
 #include "action.h"
 
@@ -43,12 +44,25 @@ void register_led_indicator_task(keychron_cb cb, bool priority);
 #else
 =======
 >>>>>>> f9f4cf410f (Remove *_CALLBACK_ENABLE related code; Fix V2 Max device name)
+=======
+<<<<<<<< HEAD:keyboards/keychron/q4/ansi/v2/config.h
+/* RGB Matrix Driver Configuration */
+#define SNLED27351_I2C_ADDRESS_1 SNLED27351_I2C_ADDRESS_GND
+========
+#include "stdint.h"
+#include "action.h"
+
+>>>>>>> refs/remotes/origin/hall_effect_playground
 bool keychron_task_kb(void);
 bool process_record_keychron_kb(uint16_t keycode, keyrecord_t *record);
 
 void keychron_task(void);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/common/keychron_task.h
 
 =======
 >>>>>>> f9f4cf410f (Remove *_CALLBACK_ENABLE related code; Fix V2 Max device name)
+=======
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/keychron_task.h
+>>>>>>> refs/remotes/origin/hall_effect_playground

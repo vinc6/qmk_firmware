@@ -27,6 +27,8 @@ enum layers {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 <<<<<<< HEAD
+<<<<<<<< HEAD:keyboards/keychron/q1_he/iso_encoder/keymaps/default/keymap.c
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/q1v1/iso/keymaps/default/keymap.c
     [MAC_BASE] = LAYOUT_iso_83(
         KC_ESC,             KC_BRID,  KC_BRIU,  KC_NO,    KC_NO,    RM_VALD,  RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,   KC_INS,
@@ -37,6 +39,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 >>>>>>> 74b08459bc (Added Q1 Max; Updated V1 Max)
         KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,             KC_MUTE,
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/v1_max/iso_encoder/keymaps/via/keymap.c
+========
+ [MAC_BASE] = LAYOUT_iso_83(
+        KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,             KC_MUTE,
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/q1_he/iso_encoder/keymaps/via/keymap.c
+=======
+ [MAC_BASE] = LAYOUT_iso_83(
+        KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,             KC_MUTE,
+>>>>>>> refs/remotes/origin/hall_effect_playground
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,            KC_PGUP,
         KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,                      KC_PGDN,
         KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,  KC_NUHS,  KC_ENT,             KC_HOME,
@@ -44,8 +54,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL,  KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_RCMMD,MO(MAC_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/q1v1/iso/keymaps/default/keymap.c
     [MAC_FN] = LAYOUT_iso_83(
+<<<<<<<< HEAD:keyboards/keychron/q1_he/iso_encoder/keymaps/default/keymap.c
         _______,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,  _______,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
         RM_TOGG,  RM_NEXT,  RM_VALU,  RM_HUEU,  RM_SATU,  RM_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,
@@ -56,12 +68,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 =======
     [MAC_FN] = LAYOUT_iso_83(
 >>>>>>> 74b08459bc (Added Q1 Max; Updated V1 Max)
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/q1_he/iso_encoder/keymaps/via/keymap.c
+=======
+    [MAC_FN] = LAYOUT_iso_83(
+>>>>>>> refs/remotes/origin/hall_effect_playground
         _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,            RGB_TOG,
         _______,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
         RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,
         _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            KC_END,
         _______,  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,            _______,  _______,
+<<<<<<< HEAD
+<<<<<<<< HEAD:keyboards/keychron/q1_he/iso_encoder/keymaps/default/keymap.c
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/v1_max/iso_encoder/keymaps/via/keymap.c
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/q1_he/iso_encoder/keymaps/via/keymap.c
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,  _______,  _______,  _______),
 
     [WIN_BASE] = LAYOUT_iso_83(
@@ -73,8 +96,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL,  KC_LGUI,  KC_LALT,                                KC_SPC,                                 KC_RALT, MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/q1v1/iso/keymaps/default/keymap.c
     [WIN_FN] = LAYOUT_iso_83(
+<<<<<<<< HEAD:keyboards/keychron/q1_he/iso_encoder/keymaps/default/keymap.c
         _______,            KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,  RM_VALD,  RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,  _______,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
         RM_TOGG,  RM_NEXT,  RM_VALU,  RM_HUEU,  RM_SATU,  RM_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,
@@ -85,12 +110,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 =======
     [WIN_FN] = LAYOUT_iso_83(
 >>>>>>> 74b08459bc (Added Q1 Max; Updated V1 Max)
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/q1_he/iso_encoder/keymaps/via/keymap.c
+=======
+    [WIN_FN] = LAYOUT_iso_83(
+>>>>>>> refs/remotes/origin/hall_effect_playground
         _______,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FILE,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,            RGB_TOG,
         _______,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
         RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,
         _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            KC_END,
         _______,  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,            _______,  _______,
+<<<<<<< HEAD
+<<<<<<<< HEAD:keyboards/keychron/q1_he/iso_encoder/keymaps/default/keymap.c
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/v1_max/iso_encoder/keymaps/via/keymap.c
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/q1_he/iso_encoder/keymaps/via/keymap.c
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,  _______,  _______,  _______)
 
 };

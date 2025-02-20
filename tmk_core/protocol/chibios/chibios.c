@@ -88,7 +88,10 @@ host_driver_t chibios_driver = {keyboard_leds, send_keyboard, send_nkro, send_mo
                                 send_xinput,
  #endif
                                 };
+<<<<<<< HEAD
 >>>>>>> a576a0b47b (Added q1_he)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 
 #ifdef VIRTSER_ENABLE
 void virtser_task(void);
@@ -207,8 +210,11 @@ void protocol_pre_task(void) {
                 usbWakeupHost(&USB_DRIVER);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    if USB_SUSPEND_WAKEUP_DELAY > 0
                 // Some hubs, kvm switches, and monitors do
                 // weird things, with USB device state bouncing
@@ -219,10 +225,13 @@ void protocol_pre_task(void) {
                 wait_ms(USB_SUSPEND_WAKEUP_DELAY);
 #    endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
 =======
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
             }
         }
         /* Woken up */
@@ -239,6 +248,9 @@ void protocol_post_task(void) {
 #ifdef RAW_ENABLE
     raw_hid_task();
 #endif
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
     usb_idle_task();
 }

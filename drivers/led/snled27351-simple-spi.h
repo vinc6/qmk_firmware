@@ -21,6 +21,7 @@
 #include "progmem.h"
 #include "util.h"
 
+<<<<<<<< HEAD:drivers/led/snled27351-simple-spi.h
 #if defined(LED_MATRIX_SNLED27351_SPI)
 #    define SNLED27351_LED_COUNT LED_MATRIX_LED_COUNT
 #endif
@@ -29,6 +30,18 @@
 typedef struct snled27351_led_t {
     uint8_t driver : 2;
     uint8_t v;
+========
+#if defined(RGB_MATRIX_SNLED27351_SPI)
+#    define SNLED27351_LED_COUNT RGB_MATRIX_LED_COUNT
+#endif
+
+#    define SNLED27351_DRIVER_COUNT (sizeof(cs_pins)/sizeof(pin_t))
+typedef struct snled27351_led_t {
+    uint8_t driver : 2;
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+>>>>>>>> refs/remotes/origin/hall_effect_playground:drivers/led/snled27351-spi.h
 } PACKED snled27351_led_t;
 
 extern const snled27351_led_t PROGMEM g_snled27351_leds[SNLED27351_LED_COUNT];
@@ -38,10 +51,17 @@ void snled27351_init(uint8_t index);
 bool snled27351_write_register(uint8_t index, uint8_t page, uint8_t reg, uint8_t data);
 bool snled27351_write_pwm_buffer(uint8_t index, uint8_t *pwm_buffer);
 
+<<<<<<<< HEAD:drivers/led/snled27351-simple-spi.h
 void snled27351_set_value(int index, uint8_t value);
 void snled27351_set_value_all(uint8_t value);
 
 void snled27351_set_led_control_register(uint8_t index, bool value);
+========
+void snled27351_set_color(int index, uint8_t red, uint8_t green, uint8_t blue);
+void snled27351_set_color_all(uint8_t red, uint8_t green, uint8_t blue);
+
+void snled27351_set_led_control_register(uint8_t index, bool red, bool green, bool blue);
+>>>>>>>> refs/remotes/origin/hall_effect_playground:drivers/led/snled27351-spi.h
 
 // This should not be called from an interrupt
 // (eg. from a timer interrupt).

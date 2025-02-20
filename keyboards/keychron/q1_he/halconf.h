@@ -16,13 +16,17 @@
 
 #pragma once
 
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/q2/jis_encoder/config.h
 #define SNLED27351_CURRENT_TUNE { 0xC0, 0xC0, 0x5D, 0xC0, 0xC0, 0x5D, 0xC0, 0xC0, 0x5D, 0xC0, 0xC0, 0x5D }
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #define _CHIBIOS_HAL_CONF_VER_8_0_
 
 #define HAL_USE_ADC TRUE
 #define HAL_USE_SPI TRUE
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/v1_max/halconf.h
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/v1_max/halconf.h
 
@@ -32,6 +36,9 @@
 =======
 #define HAL_USE_I2C TRUE
 >>>>>>> a576a0b47b (Added q1_he):keyboards/keychron/q1_he/halconf.h
+=======
+#define HAL_USE_I2C TRUE
+>>>>>>> refs/remotes/origin/hall_effect_playground
 
 #if defined(LK_WIRELESS_ENABLE) || defined(ENCODER_ENABLE)
 #    define PAL_USE_CALLBACKS TRUE

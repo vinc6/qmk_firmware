@@ -55,12 +55,18 @@ extern usb_endpoint_in_t  usb_endpoints_in[USB_ENDPOINT_IN_COUNT];
 extern usb_endpoint_out_t usb_endpoints_out[USB_ENDPOINT_OUT_COUNT];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 uint8_t _Alignas(2) keyboard_idle     = 0;
 uint8_t _Alignas(2) keyboard_protocol = 1;
 uint8_t keyboard_led_state            = 0;
 
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 static bool __attribute__((__unused__)) send_report_buffered(usb_endpoint_in_lut_t endpoint, void *report, size_t size);
 static void __attribute__((__unused__)) flush_report_buffered(usb_endpoint_in_lut_t endpoint, bool padded);
 static bool __attribute__((__unused__)) receive_report(usb_endpoint_out_lut_t endpoint, void *report, size_t size);
@@ -309,7 +315,10 @@ static bool usb_requests_hook_cb(USBDriver *usbp) {
                             usb_device_state_set_protocol(setup->wValue.lbyte);
 =======
                             keyboard_protocol = setup->wValue.word;
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
                         }
                         usbSetupTransfer(usbp, NULL, 0, NULL);
                         return true;
@@ -318,7 +327,10 @@ static bool usb_requests_hook_cb(USBDriver *usbp) {
                         usb_device_state_set_idle_rate(setup->wValue.hbyte);
 =======
                         keyboard_idle = setup->wValue.hbyte;
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
                         return usb_set_idle_cb(usbp);
                 }
                 break;
@@ -397,6 +409,7 @@ void init_usb_driver(USBDriver *usbp) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 __attribute__((weak)) void restart_usb_driver(USBDriver *usbp) {
     usbDisconnectBus(usbp);
     usbStop(usbp);
@@ -424,6 +437,9 @@ __attribute__((weak)) void restart_usb_driver(USBDriver *usbp) {
 =======
 __attribute__((weak)) void usb_start(USBDriver *usbp) {
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
+=======
+__attribute__((weak)) void usb_start(USBDriver *usbp) {
+>>>>>>> refs/remotes/origin/hall_effect_playground
     usbStart(usbp, &usbcfg);
     usbConnectBus(usbp);
 }
@@ -433,6 +449,7 @@ __attribute__((weak)) void usb_start(USBDriver *usbp) {
  * ---------------------------------------------------------
  */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /**
  * @brief Send a report to the host, the report is enqueued into an output
@@ -466,6 +483,8 @@ static bool send_report_buffered(usb_endpoint_in_lut_t endpoint, void *report, s
 }
 
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 /* LED status */
 uint8_t keyboard_leds(void) {
     return keyboard_led_state;
@@ -502,7 +521,10 @@ static bool send_report_buffered(usb_endpoint_in_lut_t endpoint, void *report, s
     return usb_endpoint_in_send(&usb_endpoints_in[endpoint], (uint8_t *)report, size, TIME_MS2I(100), true);
 }
 
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 /** @brief Flush all buffered reports which were enqueued with a call to
  * `send_report_buffered` that haven't been send. If necessary the buffered
  * report can be padded with zeros up to the endpoints maximum size.
@@ -533,7 +555,10 @@ void send_keyboard(report_keyboard_t *report) {
     if (usb_device_state_get_protocol() == USB_PROTOCOL_BOOT) {
 =======
     if (!keyboard_protocol) {
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
         send_report(USB_ENDPOINT_IN_KEYBOARD, &report->mods, 8);
     } else {
         send_report(USB_ENDPOINT_IN_KEYBOARD, report, KEYBOARD_REPORT_SIZE);
@@ -641,7 +666,10 @@ void send_midi_packet(MIDI_EventPacket_t *event) {
 bool recv_midi_packet(MIDI_EventPacket_t *const event) {
     return receive_report(USB_ENDPOINT_OUT_MIDI, (uint8_t *)event, sizeof(MIDI_EventPacket_t));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 }
 
 void midi_ep_task(void) {
@@ -652,7 +680,10 @@ void midi_ep_task(void) {
         // packets if we consume them here
         recv_midi_packet(&event);
     }
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 }
 
 #endif

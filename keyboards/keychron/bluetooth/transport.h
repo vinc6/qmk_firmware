@@ -16,6 +16,7 @@
 
 #pragma once
 
+<<<<<<<< HEAD:keyboards/keychron/bluetooth/transport.h
 <<<<<<< HEAD:keyboards/keychron/s1/config.h
 /* Increase I2C speed to 1000 KHz */
 #define I2C1_TIMINGR_PRESC 0U
@@ -46,3 +47,21 @@ void usb_power_disconnect(void);
 void usb_transport_enable(bool enable);
 void usb_remote_wakeup(void);
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/bluetooth/transport.h
+========
+#define FACTORY_RESET_CHECK process_record_factory_test
+#define FACTORY_RESET_TASK factory_test_task
+
+void factory_test_init(void);
+
+#if defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE)
+bool factory_test_indicator(void);
+#endif
+
+//void process_record_factory_test(uint16_t keycode, keyrecord_t *record);
+bool factory_reset_indicating(void);
+void factory_test_task(void);
+void factory_test_rx(uint8_t *data, uint8_t length);
+
+bool process_record_factory_test(uint16_t keycode, keyrecord_t *record);
+
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/factory_test.h

@@ -1,21 +1,10 @@
 {
-  "keyboard_name": "Galaxy 84 HK gaming x DURGOD (QMK)",
-  "manufacturer": "Hoksi Technology",
-  "url": "https://www.amazon.com/Galaxy-75-Modular-Mechanical-Keyboard/dp/B08PDRD8MP",
-  "maintainer": "dkjer",
-  "usb": {
-      "vid": "0xD60D",
-      "pid": "0x6A1A",
-      "device_version": "0.0.1"
-  },
-  "matrix_pins": {
-    "cols": ["B0", "B1", "B2", "B10", "B11", "B12", "B13", "B14", "B15", "C6", "C7", "C8", "C9", "C10", "C11", "C12"],
-    "rows": ["A0", "A1", "A2", "A3", "A4", "A5"]
-  },
-  "diode_direction": "ROW2COL",
-  "community_layouts": ["75_ansi"],
+    "usb": {
+        "pid": "0x0E20",
+        "device_version": "1.0.0"
+    },
     "layouts": {
-        "LAYOUT_75_ansi": {
+        "LAYOUT_ansi_84": {
             "layout": [
                 {"matrix": [0, 0], "x": 0, "y": 0},
                 {"matrix": [0, 1], "x": 1, "y": 0},
@@ -78,8 +67,8 @@
                 {"matrix": [3, 9], "x": 9.75, "y": 3},
                 {"matrix": [3, 10], "x": 10.75, "y": 3},
                 {"matrix": [3, 11], "x": 11.75, "y": 3},
-                {"matrix": [3, 13], "x": 12.75, "y": 3, "w": 2.25},
-                {"matrix": [3, 14], "x": 15, "y": 3},
+                {"matrix": [3, 12], "x": 12.75, "y": 3, "w": 2.25},
+                {"matrix": [3, 13], "x": 15, "y": 3},
 
                 {"matrix": [4, 0], "x": 0, "y": 4, "w": 2.25},
                 {"matrix": [4, 2], "x": 2.25, "y": 4},

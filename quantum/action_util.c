@@ -332,8 +332,11 @@ void send_nkro_report(void) {
 void send_keyboard_report(void) {
 #ifdef NKRO_ENABLE
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (usb_device_state_get_protocol() == USB_PROTOCOL_REPORT && keymap_config.nkro) {
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #    ifdef APDAPTIVE_NKRO_ENABLE
     if (keyboard_protocol && (kb_report_changed & KB_RPT_NKRO)) {
         send_nkro_report();

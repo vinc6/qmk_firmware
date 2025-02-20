@@ -370,12 +370,17 @@ void led_matrix_task(void) {
     bool suspend_backlight = suspend_state ||
 #if LED_MATRIX_TIMEOUT > 0
 <<<<<<< HEAD
+<<<<<<< HEAD
                              (last_input_activity_elapsed() > (uint32_t)LED_MATRIX_TIMEOUT) ||
 #endif // LED_MATRIX_TIMEOUT > 0
 =======
                              (led_anykey_timer > led_matrix_timeout) ||
 #endif // led_matrix_timeout > 0
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
+=======
+                             (led_anykey_timer > led_matrix_timeout) ||
+#endif // led_matrix_timeout > 0
+>>>>>>> refs/remotes/origin/hall_effect_playground
                              false;
 
     uint8_t effect = suspend_backlight || !led_matrix_eeconfig.enable ? 0 : led_matrix_eeconfig.mode;

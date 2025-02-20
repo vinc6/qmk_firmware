@@ -1,5 +1,6 @@
 {
     "usb": {
+<<<<<<< HEAD
 <<<<<<< HEAD:keyboards/keychron/v1_max/iso_encoder/info.json
         "pid": "0x0914",
         "device_version": "1.0.0"
@@ -31,6 +32,10 @@
         "pid": "0x0B11",
         "device_version": "1.0.1"
 >>>>>>> a576a0b47b (Added q1_he):keyboards/keychron/q1_he/iso_encoder/info.json
+=======
+        "pid": "0x0B11",
+        "device_version": "1.0.1"
+>>>>>>> refs/remotes/origin/hall_effect_playground
     },
     "layouts": {
         "LAYOUT_iso_83": {

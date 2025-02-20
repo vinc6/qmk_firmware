@@ -33,7 +33,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum hid_report_ids { 
 =======
 enum hid_report_ids {
+<<<<<<< HEAD
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
     REPORT_ID_ALL = 0,
     REPORT_ID_KEYBOARD = 1,
     REPORT_ID_MOUSE,
@@ -48,12 +51,17 @@ enum hid_report_ids {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define IS_VALID_REPORT_ID(id) ((id) >= REPORT_ID_ALL && (id) <= REPORT_ID_COUNT)
 =======
 =======
 #define IS_VALID_REPORT_ID(id) ((id) >= REPORT_ID_ALL && (id) <= REPORT_ID_COUNT)
 
 >>>>>>> b6d42d84d2 (Pick upstream PR #21656)
+=======
+#define IS_VALID_REPORT_ID(id) ((id) >= REPORT_ID_ALL && (id) <= REPORT_ID_COUNT)
+
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #ifdef APDAPTIVE_NKRO_ENABLE
 /* Keyboard report type */
 #define KB_RPT_MASK(n) (1 << (n))
@@ -62,7 +70,10 @@ enum kb_reports {
     KB_RPT_NKRO = KB_RPT_MASK(1)
 };
 #endif
+<<<<<<< HEAD
 >>>>>>> 6aa63c3c63 (Add adaptive NKRO feature)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 
 /* Mouse buttons */
 #define MOUSE_BTN_MASK(n) (1 << (n))

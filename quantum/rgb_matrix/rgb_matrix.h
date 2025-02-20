@@ -247,8 +247,11 @@ led_flags_t rgb_matrix_get_flags(void);
 void        rgb_matrix_set_flags(led_flags_t flags);
 void        rgb_matrix_set_flags_noeeprom(led_flags_t flags);
 <<<<<<< HEAD
+<<<<<<< HEAD
 void        rgb_matrix_update_pwm_buffers(void);
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #ifdef RGB_MATRIX_TIMEOUT
 #    if RGB_MATRIX_TIMEOUT > 0
 void rgb_matrix_disable_timeout_set(uint32_t timeout);
@@ -262,7 +265,10 @@ void rgb_matrix_driver_exit_shutdown(void);
 bool rgb_matrix_is_driver_shutdown(void);
 bool rgb_matrix_driver_allow_shutdown(void);
 #endif
+<<<<<<< HEAD
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 
 #ifndef RGBLIGHT_ENABLE
 #    define eeconfig_update_rgblight_current eeconfig_update_rgb_matrix

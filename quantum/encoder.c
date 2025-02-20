@@ -31,7 +31,10 @@ static void encoder_queue_drain(void) {
 static pin_t encoders_pad_a[NUM_ENCODERS_MAX_PER_SIDE] = ENCODERS_PAD_A;
 static pin_t encoders_pad_b[NUM_ENCODERS_MAX_PER_SIDE] = ENCODERS_PAD_B;
 static bool  encoder_interrupt_update[NUM_ENCODERS]    = {false};
+<<<<<<< HEAD
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 
 static bool encoder_handle_queue(void) {
     bool    changed = false;

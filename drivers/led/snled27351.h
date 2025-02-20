@@ -186,10 +186,13 @@ void snled27351_update_led_control_registers(uint8_t index);
 
 void snled27351_flush(void);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 void snled27351_sw_return_normal(uint8_t index);
 void snled27351_sw_shutdown(uint8_t index);
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
 void snled27351_shutdown(void);
 void snled27351_exit_shutdown(void);
 void snled27351_sw_return_normal(uint8_t addr);

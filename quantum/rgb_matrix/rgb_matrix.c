@@ -403,10 +403,14 @@ void rgb_matrix_task(void) {
     bool suspend_backlight = suspend_state ||
 #if RGB_MATRIX_TIMEOUT > 0
 <<<<<<< HEAD
+<<<<<<< HEAD
                              (last_input_activity_elapsed() > (uint32_t)RGB_MATRIX_TIMEOUT) ||
 =======
                              (rgb_anykey_timer > rgb_matrix_timeout) ||
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max)
+=======
+                             (rgb_anykey_timer > rgb_matrix_timeout) ||
+>>>>>>> refs/remotes/origin/hall_effect_playground
 #endif // RGB_MATRIX_TIMEOUT > 0
                              false;
 

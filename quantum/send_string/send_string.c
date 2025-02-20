@@ -187,16 +187,22 @@ void send_string_with_delay(const char *string, uint8_t interval) {
                     keycode = *(++string);
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 wait_ms(ms);
 =======
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
                 while (ms--) {
 #if defined(LK_WIRELESS_ENABLE) || defined(KC_BLUETOOTH_ENABLE)
                     send_string_task();
 #endif
                     wait_ms(1);
                 }
+<<<<<<< HEAD
 >>>>>>> 0cd4ee07c3 (fix delay of macro doens't work properly except cable mode)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
             }
 
             wait_ms(interval);
@@ -220,7 +226,10 @@ void send_string_with_delay(const char *string, uint8_t interval) {
 #if defined(LK_WIRELESS_ENABLE) || defined(KC_BLUETOOTH_ENABLE)
         send_string_task();
 #endif
+<<<<<<< HEAD
 >>>>>>> 0cd4ee07c3 (fix delay of macro doens't work properly except cable mode)
+=======
+>>>>>>> refs/remotes/origin/hall_effect_playground
     }
 }
 

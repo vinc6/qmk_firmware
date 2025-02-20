@@ -16,12 +16,18 @@
 
 #pragma once
 
+<<<<<<<< HEAD:keyboards/keychron/bluetooth/bat_level_animation.h
 <<<<<<< HEAD:keyboards/keychron/q0/config.h
 #define SNLED27351_CURRENT_TUNE { 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70 }
 =======
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/wireless/bat_level_animation.h
 void bat_level_animiation_start(uint8_t percentage);
 void bat_level_animiation_stop(void);
 bool bat_level_animiation_actived(void);
 void bat_level_animiation_indicate(void);
 void bat_level_animiation_task(void);
+<<<<<<<< HEAD:keyboards/keychron/bluetooth/bat_level_animation.h
 >>>>>>> 4ae5990fcc (Added wireless support; Added Lemokey L3; Added Keychron V1 Max):keyboards/keychron/bluetooth/bat_level_animation.h
+========
+>>>>>>>> refs/remotes/origin/hall_effect_playground:keyboards/keychron/common/wireless/bat_level_animation.h
