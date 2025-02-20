@@ -18,6 +18,10 @@
 #include "keychron_common.h"
 // #include "keymap_japanese.h"
 
+#define CMDBSPC LT(0,KC_DEL)
+#define INPUT_S LT(0,KC_NO)
+#define LCTL_CW CTL_T(KC_NO)
+
 enum layers {
     MAC_BASE,
     MAC_FN,
@@ -27,7 +31,6 @@ enum layers {
 
 enum my_keycodes {
     SCRSHOT = SAFE_RANGE,
-    CWJPIME,
     PPXT_AI,
     WEBDICT,
     APPDICT,
@@ -38,36 +41,36 @@ enum my_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_ansi_84(
-            KC_ESC,         KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD,     RGB_VAD, RGB_VAI, KC_MPRV,      KC_MPLY, KC_MNXT, KC_MUTE,  KC_VOLD,    KC_VOLU, SCRSHOT, LT(0,KC_DEL), LT(0,KC_NO),
-            KC_GRV,         KC_1,     KC_2,     KC_3,     KC_4,         KC_5,    KC_6,    KC_7,         KC_8,    KC_9,    KC_0,     KC_MINS,    KC_EQL,  KC_BSPC,               KC_PGUP,
-            SCMD_T(KC_TAB), KC_Q,     KC_W,     KC_E,     KC_R,         KC_T,    KC_Y,    KC_U,         KC_I,    KC_O,    KC_P,     KC_LBRC,    KC_RBRC, KC_BSLS,               KC_PGDN,
-            CTL_T(CW_TOGG), KC_A,     KC_S,     KC_D,     LSFT_T(KC_F), KC_G,    KC_H,    RSFT_T(KC_J), KC_K,    KC_L,    KC_SCLN,  KC_QUOT,             KC_ENT,                KC_HOME,
-            KC_LSFT,                  KC_Z,     KC_X,     KC_C,         KC_V,    KC_B,    KC_N,         KC_M,    KC_COMM, KC_DOT,   KC_SLSH,             KC_RSFT, KC_UP,        KC_END,
-            MO(MAC_FN),     KC_LOPTN, KC_LCMMD,                                  KC_SPC,                                  KC_RCMMD, MO(MAC_FN), KC_RCTL, KC_LEFT, KC_DOWN,      KC_RGHT),
+            KC_ESC,         KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD,     RGB_VAD, RGB_VAI, KC_MPRV,      KC_MPLY, KC_MNXT, KC_MUTE,  KC_VOLD,    KC_VOLU, SCRSHOT, CMDBSPC, INPUT_S,
+            KC_GRV,         KC_1,     KC_2,     KC_3,     KC_4,         KC_5,    KC_6,    KC_7,         KC_8,    KC_9,    KC_0,     KC_MINS,    KC_EQL,  KC_BSPC,          KC_PGUP,
+            SCMD_T(KC_TAB), KC_Q,     KC_W,     KC_E,     KC_R,         KC_T,    KC_Y,    KC_U,         KC_I,    KC_O,    KC_P,     KC_LBRC,    KC_RBRC, KC_BSLS,          KC_PGDN,
+            LCTL_CW,        KC_A,     KC_S,     KC_D,     LSFT_T(KC_F), KC_G,    KC_H,    RSFT_T(KC_J), KC_K,    KC_L,    KC_SCLN,  KC_QUOT,             KC_ENT,           KC_HOME,
+            KC_LSFT,                  KC_Z,     KC_X,     KC_C,         KC_V,    KC_B,    KC_N,         KC_M,    KC_COMM, KC_DOT,   KC_SLSH,             KC_RSFT, KC_UP,   KC_END,
+            MO(MAC_FN),     KC_LOPTN, KC_LCMMD,                                  KC_SPC,                                  KC_RCMMD, MO(MAC_FN), KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
 
     [MAC_FN] = LAYOUT_ansi_84(
-            _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,    _______,    PPXT_AI,
-            _______,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                WEBDICT,
-            RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                APPDICT,
-            _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,            _______,                _______,
-            _______,            _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  KC_BTN1,  KC_BTN2,  _______,            _______,    KC_MS_UP,   _______,
-            _______,  _______,  _______,                                _______,                                _______,  _______,  _______,  KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT),
+            _______,    KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,    _______,    PPXT_AI,
+            KC_CAPS,    BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                WEBDICT,
+            RGB_TOG,    RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                APPDICT,
+            _______,    RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,            _______,                _______,
+            _______,              _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  KC_BTN1,  KC_BTN2,  _______,            _______,    KC_MS_UP,   _______,
+            _______,    _______,  _______,                                _______,                                _______,  _______,  _______,  KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT),
 
     [WIN_BASE] = LAYOUT_ansi_84(
-            KC_ESC,         KC_F1,    KC_F2,    KC_F3,    KC_F4,        KC_F5,   KC_F6,   KC_F7,        KC_F8,   KC_F9,   KC_F10,   KC_F11,     KC_F12,  MSPAINT, KC_DEL,       KC_INS,
-            KC_GRV,         KC_1,     KC_2,     KC_3,     KC_4,         KC_5,    KC_6,    KC_7,         KC_8,    KC_9,    KC_0,     KC_MINS,    KC_EQL,  KC_BSPC,               KC_PGUP,
-            KC_TAB,         KC_Q,     KC_W,     KC_E,     KC_R,         KC_T,    KC_Y,    KC_U,         KC_I,    KC_O,    KC_P,     KC_LBRC,    KC_RBRC, KC_BSLS,               KC_PGDN,
-            CTL_T(CWJPIME), KC_A,     KC_S,     KC_D,     LSFT_T(KC_F), KC_G,    KC_H,    RSFT_T(KC_J), KC_K,    KC_L,    KC_SCLN,  KC_QUOT,             KC_ENT,                KC_HOME,
-            KC_LSFT,                  KC_Z,     KC_X,     KC_C,         KC_V,    KC_B,    KC_N,         KC_M,    KC_COMM, KC_DOT,   KC_SLSH,             KC_RSFT, KC_UP,        KC_END,
-            MO(WIN_FN),     KC_LGUI,  KC_LALT,                                   KC_SPC,                                  KC_RALT,  MO(WIN_FN), KC_RCTL, KC_LEFT, KC_DOWN,      KC_RGHT),
+            KC_ESC,         KC_F1,    KC_F2,    KC_F3,    KC_F4,        KC_F5,   KC_F6,   KC_F7,        KC_F8,   KC_F9,   KC_F10,   KC_F11,     KC_F12,  MSPAINT, KC_DEL,  KC_INS,
+            KC_GRV,         KC_1,     KC_2,     KC_3,     KC_4,         KC_5,    KC_6,    KC_7,         KC_8,    KC_9,    KC_0,     KC_MINS,    KC_EQL,  KC_BSPC,          KC_PGUP,
+            KC_TAB,         KC_Q,     KC_W,     KC_E,     KC_R,         KC_T,    KC_Y,    KC_U,         KC_I,    KC_O,    KC_P,     KC_LBRC,    KC_RBRC, KC_BSLS,          KC_PGDN,
+            LCTL_CW,        KC_A,     KC_S,     KC_D,     LSFT_T(KC_F), KC_G,    KC_H,    RSFT_T(KC_J), KC_K,    KC_L,    KC_SCLN,  KC_QUOT,             KC_ENT,           KC_HOME,
+            KC_LSFT,                  KC_Z,     KC_X,     KC_C,         KC_V,    KC_B,    KC_N,         KC_M,    KC_COMM, KC_DOT,   KC_SLSH,             KC_RSFT, KC_UP,   KC_END,
+            MO(WIN_FN),     KC_LGUI,  KC_LALT,                                   KC_SPC,                                  KC_RALT,  MO(WIN_FN), KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
 
     [WIN_FN] = LAYOUT_ansi_84(
-            _______,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FILE,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_PSCR,    A(KC_GRV),  S(KC_CAPS),
-            KC_INT2,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                C(KC_CAPS),
-            RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                A(KC_CAPS),
-            _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,            _______,                _______,
-            _______,            _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  KC_BTN1,  KC_BTN2,  _______,            _______,    KC_MS_UP,   _______,
-            _______,  _______,  _______,                                KC_APP,                                 _______,  _______,  _______,  KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT)
+            _______,    KC_BRID,  KC_BRIU,  KC_TASK,  KC_FILE,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_PSCR,    _______,    _______,
+            A(KC_CAPS), BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                _______,
+            RGB_TOG,    RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                _______,
+            _______,    RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,            _______,                _______,
+            _______,              _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  KC_BTN1,  KC_BTN2,  _______,            _______,    KC_MS_UP,   _______,
+            _______,    _______,  _______,                                KC_APP,                                 _______,  _______,  _______,  KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT)
 };
 
 // clang-format on
@@ -89,13 +92,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
 
         // intercept hold function to send Command-Backspace
-        case LT(0,KC_DEL):
+        case CMDBSPC:
             if (!record->tap.count && record->event.pressed) {
                 tap_code16(LCMD(KC_BSPC));
             }
             break;
 
-        case LT(0,KC_NO):
+        case INPUT_S:
             if (record->tap.count && record->event.pressed) {
                 tap_code16(LCA(KC_SPC));                // tap select next source in input menu
             } else if (record->event.pressed) {
@@ -103,25 +106,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
 
-        case CTL_T(CW_TOGG):
+        case LCTL_CW:
             if (record->tap.count && record->event.pressed) {
                 caps_word_toggle(); // toggle Caps Word on tap
                 return false;       // return false to ignore further processing of key
-            }
-            break;
-
-        case CTL_T(CWJPIME):
-            if (record->tap.count && record->event.pressed) {
-                if (get_mods() == MOD_BIT(KC_LSFT) || get_mods() == MOD_BIT(KC_LALT)) {
-                    tap_code_delay(KC_CAPS,100);
-                } else if (get_mods() == MOD_BIT(KC_LGUI)) {
-                    del_mods(MOD_BIT(KC_LGUI));
-                    add_oneshot_mods(MOD_BIT(KC_LCTL));
-                    tap_code_delay(KC_CAPS,100);
-                } else {
-                    caps_word_toggle();
-                }
-                return false;
             }
             break;
 
@@ -145,14 +133,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case MSPAINT:
             if (record->event.pressed) {
-                tap_code16(LALT(KC_PSCR));
-                SEND_STRING(SS_DELAY(80) SS_LGUI("r") SS_DELAY(80) "mspaint\n" SS_DELAY(80) SS_LCTL("v"));
+                register_code(KC_LALT);
+                register_code(KC_PSCR);
+            } else {
+                unregister_code(KC_PSCR);
+                unregister_code(KC_LALT);
+                SEND_STRING(SS_LGUI("r") SS_DELAY(80) "mspaint\n" SS_DELAY(800) SS_LCTL("v"));
             }
             break;
     }
     return true;
 }
 
+/*
 // Shift + Caps lock, equivalent to Eisu key
 const key_override_t shift_caps_override = 
     ko_make_basic(
@@ -180,4 +173,5 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &gui_caps_override,
     NULL
 };
+*/
 
